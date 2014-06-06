@@ -12,4 +12,8 @@ hist(data$Global_active_power,
      ylab="Frequency",
      col="red")
         
+<<<<<<< HEAD
 dev.off()
+=======
+dev.off()
+>>>>>>> eca5b295515355b938949e3bee4266724f35a8e6
