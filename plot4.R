@@ -1,4 +1,4 @@
-png("plot4.png", width=400, height=400)
+png("plot4.png", width=800, height=800)
 
 
 par(mfrow=c(2,2))
