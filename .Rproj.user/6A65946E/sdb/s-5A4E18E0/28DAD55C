@@ -1,0 +1,16 @@
+{
+    "contents" : "## Load dataset\n\ndate_time <- function(date, time) {\n        return (strptime(paste(date, time), \"%d/%m/%Y %H:%M:%S\"))\n}\n\n\nload_data <- function(fileName) {\n        filename <- fileName\n        df <- read.table(filename,\n                         header=TRUE,\n                         sep=\";\",\n                         colClasses=c(\"character\", \"character\", rep(\"numeric\",7)),\n                         na=\"?\")\n        # convert date and time variables to Date/Time class\n        df$Time <- strptime(paste(df$Date, df$Time), \"%d/%m/%Y %H:%M:%S\")\n        df$Date <- as.Date(df$Date, \"%d/%m/%Y\")\n        # only use data from the dates 2007-02-01 and 2007-02-02\n        dates <- as.Date(c(\"2007-02-01\", \"2007-02-02\"), \"%Y-%m-%d\")\n        df <- subset(df, Date %in% dates)\n        \n        return(df)\n}\n",
+    "created" : 1402034492967.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2271417237",
+    "id" : "28DAD55C",
+    "lastKnownWriteTime" : 1401962099,
+    "path" : "~/GitHub/ExData_Plotting1/import_data.R",
+    "project_path" : "import_data.R",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}
